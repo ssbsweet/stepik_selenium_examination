@@ -1,16 +1,20 @@
+# Необходимый импорт
 from selenium.webdriver.common.by import By
 
-class MainPageLocators(object):
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    BASKET_LINK = (By.CSS_SELECTOR, ".btn-group > .btn:nth-child(1)")
-
-class LoginPageLocators(object):
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
+# еречень локаторов под разные страницы
 
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+class MainPageLocators(object):
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_LINK = (By.CSS_SELECTOR, ".btn-group > .btn:nth-child(1)")
+    BASKET_EMPTY = (By.CSS_SELECTOR, "div > #content_inner > p")
+
+class LoginPageLocators(object):
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
 
 class ProductPageLocators(object):
     BASKET_LINK = (By.CSS_SELECTOR, ".btn-group > .btn:nth-child(1)")
