@@ -20,3 +20,6 @@ class MainPage(BasePage):
     def go_to_basket(self):
         basket_button = self.browser.find_element(*MainPageLocators.BASKET_LINK)
         basket_button.click()
+
+    def basket_is_empty(self):
+        assert self.is_element_present(*MainPageLocators.SOMETHING_IN_BASKET), "Basket is not empted"

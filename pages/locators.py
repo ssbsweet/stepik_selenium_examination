@@ -10,7 +10,7 @@ class BasePageLocators(object):
 class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".btn-group > .btn:nth-child(1)")
-    BASKET_EMPTY = (By.CSS_SELECTOR, "div > #content_inner > p")
+    SOMETHING_IN_BASKET = (By.CSS_SELECTOR, ".basket-title")
 
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
