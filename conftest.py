@@ -1,20 +1,18 @@
-import pytest   # импорт пайтест
-from selenium import webdriver  # импорт вебдрайвера
-from selenium.webdriver.chrome.options import Options   # импорт Options
+import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
-def pytest_addoption(parser):   #   парсер
-    parser.addoption('--language', action='store', default="en",    #--язык, действие - собрать, по-умолчанию - ничего, хелп
-                     help="Choose browser: chrome")
+def pytest_addoption(parser):
+    parser.addoption('--language', action='store', default="en",
+                     help="Choose driver: chrome")
 
 
-@pytest.fixture(scope="function")   # область приминения
-def browser(request):  # переменная задаем
-    language = request.config.getoption("language")	# получить опцию языка
-    options = Options()	# переменная опции равна подхваченным опциям
+@pytest.fixture(scope="function")
+def driver(request):
+    language = request.config.getoption("language")
+    options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language}) 
-    browser = webdriver.Chrome(options=options) # подхватываем браузер
-    yield browser
-    print("\nquit browser..")
-    browser.quit() # закрыть браузер после теста
-
-
+    driver = webdriver.Chrome(options=options)
+    yield driver
+    print("\nquit driver..")
+    driver.quit()
