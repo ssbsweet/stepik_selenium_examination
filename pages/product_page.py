@@ -33,3 +33,4 @@ class ProductPage(BasePage):
     def go_to_basket(self):
         basket_button = self.driver.find_element(*ProductPageLocators.BASKET_LINK)
         basket_button.click()
+
